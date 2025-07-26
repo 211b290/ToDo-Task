@@ -3,7 +3,7 @@
     "id": 1,
     "name": "Upload Project Report",
     "description": "Finalize and upload the complete project report with charts and analysis.",
-    "dueDate": "10-10-2024",
+    "dueDate": "2025-12-11",
     "priority": "High",
     "status": "Completed"
   },
@@ -11,7 +11,7 @@
     "id": 2,
     "name": "Hold Team Review",
     "description": "Organize a review meeting to evaluate the sprint progress and outcomes.",
-    "dueDate": "15-12-2025",
+    "dueDate": "2025-02-11",
     "priority": "Medium",
     "status": "In Progress"
   },
@@ -19,7 +19,7 @@
     "id": 3,
     "name": "Refactor Application Code",
     "description": "Improve code structure and remove redundant logic from the core modules.",
-    "dueDate": "20-11-2028",
+    "dueDate": "2025-10-11",
     "priority": "High",
     "status": "In Progress"
   },
@@ -27,7 +27,7 @@
     "id": 4,
     "name": "Review Client Comments",
     "description": "Go through client feedback and note down requested changes.",
-    "dueDate": "20-02-2027",
+    "dueDate": "2027-12-11",
     "priority": "Low",
     "status": "Completed"
   },
@@ -35,7 +35,7 @@
     "id": 5,
     "name": "Optimize Frontend Speed",
     "description": "Enhance UI responsiveness by optimizing images and minifying resources.",
-    "dueDate": "24-12-2028",
+    "dueDate": "2028-12-11",
     "priority": "Medium",
     "status": "Completed"
   },
@@ -43,7 +43,7 @@
     "id": 6,
     "name": "Perform Security Testing",
     "description": "Run penetration tests to identify and fix security loopholes.",
-    "dueDate": "15-02-2024",
+    "dueDate": "2025-12-01",
     "priority": "High",
     "status": "Completed"
   },
@@ -51,7 +51,7 @@
     "id": 7,
     "name": "Launch Beta Product",
     "description": "Deploy the beta version of the app and gather user feedback.",
-    "dueDate": "20-12-2025",
+    "dueDate": "2025-12-18",
     "priority": "High",
     "status": "In Progress"
   }

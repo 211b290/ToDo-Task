@@ -10,7 +10,13 @@ interface TaskTableProps {
 }
 
 const TaskTable: React.FC<TaskTableProps> = ({ tasks = [] }) => {
-  const { filterTasks, editTask, deleteTask } = useTaskContext(); // Get editTask and deleteTask from context
+  const { filterTasks, editTask, deleteTask } = useTaskContext();
+
+  
+  function convertDateFormat(dateStr: string): string {
+    const [year, month, day] = dateStr.split("-");
+    return `${day}-${month}-${year}`; 
+  }
 
   return (
     <div className={styles.taskTableContainer}>
@@ -32,7 +38,7 @@ const TaskTable: React.FC<TaskTableProps> = ({ tasks = [] }) => {
               <td>{index + 1}</td>
               <td>{task.name}</td>
               <td>{task.description}</td>
-              <td className={styles.DueColumn}>{task.dueDate}</td>
+              <td className={styles.DueColumn}>{convertDateFormat(task.dueDate)}</td>
               <td className={styles.statusColumn}>
                 <span
                   className={`${styles.status} ${
@@ -51,9 +57,7 @@ const TaskTable: React.FC<TaskTableProps> = ({ tasks = [] }) => {
                 />
               </td>
               <td>
-                <ActionButton
-                  task={task} // Pass the task object to ActionButton
-                />
+                <ActionButton task={task} />
               </td>
             </tr>
           ))}

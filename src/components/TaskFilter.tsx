@@ -48,7 +48,7 @@ const Filter: React.FC = () => {
               className={styles.filterItem}
             >
               <option value="">All</option>
-              <option value="Complete">Complete</option>
+              <option value="Complete">Completed</option>
               <option value="In Progress">In Progress</option>
               <option value="Cancelled">Cancelled</option>
             </select>

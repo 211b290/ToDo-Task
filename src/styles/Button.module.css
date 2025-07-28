@@ -115,7 +115,7 @@
   z-index: 10;
   padding: 1rem;
   white-space: nowrap; /* Prevent text truncation */
-  width: 100px;
+  width: 200px;
 }
 
 .filterSection {

@@ -1,91 +1,85 @@
-/* Container for the task table */
-.taskTableContainer {
-  width: 100%;
-  padding: 0.5rem;
-  background-color: #f9f9f9;
-}
-
-/* Task table: styled more like cards */
-.taskTable {
-  width: 100%;
-  border-spacing: 0;
-  border-collapse: collapse;
-}
-
-/* Hide headers for mobile (since cards don't need them) */
-.taskTable th {
-  display: none;
-}
-
-/* Task rows: Card-like appearance */
-.taskRow {
-  background-color: white;
-  margin-bottom: 1rem;
-  padding: 1rem;
-  border: 1px solid #ddd;
+.accordionContainer {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #d4a0a0;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  gap: 0.5rem;
+  padding: 0.5rem;
+  background-color: #fff;
+}
+
+.accordionItem {
+  background-color: #fff2f2;
+  overflow: hidden;
+  font-size: 0.95rem;
+}
+
+.accordionHeader {
+  padding: 0.75rem 1rem;
+  background-color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
 }
 
-/* Title and SL.No styling */
-.taskRow td {
-  padding: 0;
+.accordionHeader:hover {
+  background-color: white;
+}
+
+.accordionHeaderContent {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+
+.accordionHeaderContent p {
   margin: 0;
-  font-size: 1rem;
-  font-weight: bold;
+  font-size: 0.92rem;
+  color: #a00;
 }
 
-/* Number for tasks */
-.taskRow td:first-child {
-  margin-right: 1rem;
-  font-size: 0.9rem;
-  color: #941b0f;
+.arrow {
+  font-size: 1.1rem;
+  color: #444;
 }
 
-/* Expanded content when a task row is clicked */
-.expandedRowContent {
-  background-color: #fffdf9;
+.accordionBody {
   padding: 1rem;
-  border: 1px solid #941b0f;
-  border-radius: 8px;
-  margin-top: 1rem;
+  background-color: #fff;
   animation: fadeIn 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Expanded row content styling */
-.expandedRowContent p {
-  margin: 0.5rem 0;
+.row {
+  display: flex;
+  justify-content: space-between;
   font-size: 0.9rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.25rem;
 }
 
-.expandedRowContent strong {
-  font-weight: bold;
+.row strong {
+  color: #a00;
+  min-width: 90px;
 }
 
-/* Status badge styling */
+/* Status badge styles */
 .status {
   display: inline-block;
   padding: 0.25rem 0.75rem;
   border-radius: 12px;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: bold;
+  margin-left: 0.5rem;
 }
 
-.status.complete {
+.status.completed {
   background-color: #28a745;
   color: white;
 }
@@ -102,53 +96,59 @@
 
 /* Priority dropdown */
 .priorityContainer {
-  margin-top: 1rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
 }
 
-.priorityContainer strong {
-  font-size: 0.85rem;
-  margin-right: 0.5rem;
-}
-
-/* Action buttons container */
 .actionsContainer {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 0.5rem;
   margin-top: 1rem;
   padding-top: 0.5rem;
   border-top: 1px solid #ddd;
 }
 
-/* Collapse/expand button styling */
-.expandBtn {
-  background-color: #941b0f;
-  color: white;
-  border: none;
-  padding: 0.25rem 0.75rem;
-  border-radius: 5px;
-  font-size: 0.9rem;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.expandBtn:before {
-  content: "▼";
-  margin-right: 0.5rem;
-}
+/* Responsive */
+@media (max-width: 600px) {
+  .accordionHeader {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-.expandBtn.active:before {
-  content: "▲";
-}
+  .accordionBody {
+    padding: 0.75rem;
+  }
 
-/* Additional styling for smooth transitions */
-.taskRow {
-  transition: background-color 0.2s ease;
-}
+  .row {
+    flex-direction: row;
+    align-items: flex-start;
+  }
 
-.taskRow:hover {
-  background-color: #f7f7f7;
+  .row strong {
+    font-size: 0.92rem;
+  }
+
+  .priorityContainer {
+    flex-direction: row;
+  }
+
+  .actionsContainer {
+    flex-direction: row;
+  }
 }
